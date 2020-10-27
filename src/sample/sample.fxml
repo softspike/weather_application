@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="969.0" style="-fx-background-radius: 20; -fx-background-color: #030307;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+
+        <!-- Main Anchor Grid Layout [SIMPLE WEATHER APPLICATION] -->
+        <GridPane layoutX="22.0" layoutY="-77.0" prefHeight="193.0" prefWidth="947.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="473.0" minWidth="10.0" prefWidth="67.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="684.0" minWidth="0.0" prefWidth="548.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="779.0" minWidth="10.0" prefWidth="269.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="0.0" prefWidth="44.0" />
+                <ColumnConstraints maxWidth="119.0" minWidth="6.0" prefWidth="23.0" />
+                <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints maxHeight="26.0" minHeight="8.0" prefHeight="13.0" />
+                <RowConstraints maxHeight="98.0" minHeight="6.0" prefHeight="64.0" />
+                <RowConstraints maxHeight="399.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="399.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="509.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                <RowConstraints />
+            </rowConstraints>
+            <children>
+                <ImageView fitHeight="37.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                    <image>
+                        <!-- * Author: FlatIconMaker,
+                         * Retrieval date: 12/4/20,
+                         * URL: http://www.iconarchive.com/show/flat-style-icons-by-flaticonmaker/cloud-icon.html -->
+                        <Image url="@../resources/cloud-icon.png" />
+                    </image>
+                </ImageView>
+                <Label text="SIMPLE WEATHER APPLICATION" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Pane prefHeight="116.0" prefWidth="339.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad" stylesheets="@../css/style.css" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4" GridPane.rowSpan="4">
+                    <children>
+                        <Label layoutX="29.0" layoutY="35.0" text="UK FORECAST" textFill="WHITE">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="37.0" fitWidth="45.0" layoutX="185.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <!-- * Author: Allwavingflags,
+                                 * Retrieval date: 9/4/20,
+                                 * URL: https://2.bp.blogspot.com/-VxFu04kzfbg/W0xnP4C4quI/AAAAAAAApjo/2ANVqpvS_fgSdx2i23bAi80MhzirhJJEACLcBGAs/s1600/Flag_of_the_United_Kingdom.gif -->
+                                <Image url="@../resources/ukflag.gif" />
+                            </image>
+                        </ImageView>
+
+                        <!-- Application Navigation Button [MIN APP] -->
+                        <Button fx:id="btnMini" contentDisplay="CENTER" layoutX="252.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizeApp" prefHeight="0.0" prefWidth="28.0" styleClass="button7" stylesheets="@../css/style.css" text="-" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+
+                        <!-- Application Navigation Button [EXIT APP] -->
+                        <Button fx:id="btnExit" contentDisplay="CENTER" layoutX="283.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="26.0" prefWidth="28.0" styleClass="button5" stylesheets="@../css/style.css" text="X" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </GridPane>
+
+        <!-- Menu TabPane -->
+        <TabPane fx:id="tabpane" layoutY="75.0" prefHeight="530.0" prefWidth="900.0" side="LEFT" style="-fx-background-radius: 10; -fx-background-color: #030307;" stylesheets="@../css/style.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="2.5" tabMaxWidth="2.5" tabMinHeight="2.5" tabMinWidth="2.5">
+            <tabs>
+                <Tab fx:id="MetStation" style="-fx-background-color: ;" text="Arch">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="915.0" style="-fx-background-color: #fff; -fx-background-radius: 0 10 10 10;" stylesheets="@../css/style.css">
+                            <children>
+
+                                <!-- Grid Constraints [Archive Tab] -->
+                                <GridPane prefHeight="536.0" prefWidth="831.0" style="-fx-background-color: #131022; -fx-background-radius: 0 10 10 10;" AnchorPane.bottomAnchor="-34.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="0.0" prefWidth="26.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.0" minWidth="10.0" prefWidth="424.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="0.0" prefWidth="11.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="10.0" prefWidth="76.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="0.0" prefWidth="4.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="0.0" prefWidth="26.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="17.0" prefWidth="17.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="83.0" prefWidth="163.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="83.0" prefWidth="83.0" />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="125.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="88.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="114.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="60.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="107.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="49.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="90.0" minHeight="51.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label prefHeight="49.0" prefWidth="266.0" text="WEATHER IN 2019" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="26.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- QUESTION1: ComboBox -To display list of stations [ARCHIVE TAB] -->
+                                        <ComboBox fx:id="metStation" prefHeight="29.0" prefWidth="212.0" promptText="Meteorological Station" style="-fx-border-color: #fff;" styleClass="button4" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ComboBox>
+                                        <Pane prefHeight="48.0" prefWidth="265.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                            <children>
+                                                <Label layoutX="77.0" layoutY="27.0" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <!-- * Author: Icons8,
+                                                         * Retrieval date: 12/4/20,
+                                                         * URL: http://www.iconarchive.com/show/ios7-icons-by-icons8/Weather-Rain-icon.html -->
+                                                        <Image url="@../resources/rain.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="60.0" layoutY="9.0" prefHeight="28.0" prefWidth="91.0" text="Total rainfall" textFill="WHITE" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="48.0" prefWidth="265.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                            <children>
+                                                <Label layoutX="77.0" layoutY="27.0" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <!-- * Author: Icons8,
+                                                         * Retrieval date: 12/4/20,
+                                                         * URL: http://www.iconarchive.com/show/ios7-icons-by-icons8/Astrology-Air-Element-icon.html -->
+                                                        <Image url="@../resources/frost.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="59.0" layoutY="10.0" prefHeight="25.0" prefWidth="221.0" text="Total air frost days" textFill="WHITE" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="48.0" prefWidth="265.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                            <children>
+                                                <Label layoutX="77.0" layoutY="27.0" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <!-- * Author: IconsMind,
+                                                         * Retrieval date: 12/4/20,
+                                                         * URL: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Temperature-2-icon.html -->
+                                                        <Image url="@../resources/temperature-2-low.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="57.0" layoutY="10.0" prefHeight="25.0" prefWidth="348.0" text="Lowest monthly mean minimum temperature (tmin)" textFill="WHITE" />
+                                            </children>
+                                        </Pane>
+                                        <Pane prefHeight="104.0" prefWidth="434.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <children>
+                                                <Label layoutX="77.0" layoutY="27.0" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="21.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <!-- * Author: IconsMind,
+                                                         * Retrieval date: 12/4/20,
+                                                         * URL: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Temperature-2-2-icon.html -->
+                                                        <Image url="@../resources/Temperature-2high.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="55.0" layoutY="10.0" prefHeight="25.0" prefWidth="361.0" text="Highest monthly mean maximum temperature (tmax)" textFill="WHITE" />
+                                            </children>
+                                        </Pane>
+                                        <Line endX="100.0" layoutX="445.0" layoutY="54.0" startX="100.0" startY="418.0" stroke="#ae3d3d" strokeDashOffset="2.0" strokeWidth="5.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+
+                                        <!-- QUESTION1: Button - To populate information into labels [ARCHIVE TAB] -->
+                                        <Button fx:id="btSubmit1" mnemonicParsing="false" onAction="#view" prefHeight="29.0" prefWidth="84.0" style="-fx-border-radius: 15;" styleClass="button4" stylesheets="@../css/style.css" text="Submit" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </Button>
+
+                                        <!-- QUESTION1: Label - To display Highest monthly mean maximum temperature (tmax)[ARCHIVE TAB] -->
+                                        <Label fx:id="tempMaxi" alignment="CENTER" contentDisplay="TOP" prefHeight="51.0" prefWidth="61.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" text="  " textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                            <font>
+                                                <Font size="19.0" />
+                                            </font>
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin>
+                                        </Label>
+
+                                        <!-- QUESTION1: Label - To display Lowest monthly mean minimum temperature (tmin)[ARCHIVE TAB] -->
+                                        <Label fx:id="tempMini" alignment="CENTER" contentDisplay="TOP" prefHeight="51.0" prefWidth="61.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                            <font>
+                                                <Font size="19.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- QUESTION1: Label - To display Total air frost days [ARCHIVE TAB] -->
+                                        <Label fx:id="airFrost" alignment="CENTER" contentDisplay="TOP" prefHeight="51.0" prefWidth="61.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                            <font>
+                                                <Font size="19.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- QUESTION1: Label - To display Total rainfall [ARCHIVE TAB] -->
+                                        <Label fx:id="rainfall" alignment="CENTER" contentDisplay="TOP" prefHeight="51.0" prefWidth="61.0" style="-fx-background-radius: 10;" styleClass="linear-grad" stylesheets="@../css/style.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                                            <font>
+                                                <Font size="19.0" />
+                                            </font>
+                                        </Label>
+
+                                        <!-- QUESTION3: Button - To generate weather report [ARCHIVE TAB] -->
+                                        <Button fx:id="btnGenerate" mnemonicParsing="false" onAction="#CreateReport" prefHeight="35.0" prefWidth="239.0" style="-fx-border-radius: 15;" styleClass="button4" stylesheets="@../css/style.css" text="Generate" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="3">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+
+                                        <!-- QUESTION3: Button - To download generated .docx weather report [ARCHIVE TAB] -->
+                                        <Button fx:id="btnTxt" mnemonicParsing="false" onAction="#locateFile" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #FFC300;" styleClass="button5" stylesheets="@../css/style.css" text=".txt" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor></Button>
+
+                                        <Label prefHeight="42.0" prefWidth="246.0" text="REPORT 2011-19" textFill="WHITE" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font name="System Bold" size="26.0" />
+                                            </font>
+                                        </Label>
+                                        <Label prefHeight="74.0" prefWidth="234.0" text="Generate Weather Report" textFill="WHITE" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label prefHeight="19.0" prefWidth="211.0" text="        Open the Report" textFill="WHITE" GridPane.columnIndex="7" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <!-- * Author: IconLeak,
+                                 * Retrieval date: 12/4/20,
+                                 * URL: http://www.iconarchive.com/show/or-icons-by-iconleak/archive-icon.html -->
+                                <Image url="@../resources/archive-icon.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+                <Tab style="-: #131022;" text="Data">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="567.0" prefWidth="830.0" style="-fx-background-color: #131022; -fx-background-radius: 0 0 10 10;">
+                            <children>
+                                <ScrollPane layoutX="-1.0" layoutY="1.0" prefHeight="530.0" prefWidth="830.0" style="-fx-background-color: #131022; -fx-background-radius: 0 10 10 10;" stylesheets="@../css/style.css">
+                                    <content>
+                                        <VBox>
+                                            <children>
+                                                <GridPane fx:id="stationsComparisonGrid1" prefHeight="179.0" prefWidth="830.0" style="-fx-background-color: #131022;">
+                                                    <children>
+                                                        <Label layoutX="24.0" layoutY="14.0" prefHeight="31.0" prefWidth="356.0" text="WEATHER DATA" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font name="System Bold" size="26.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Button fx:id="btSubmit" mnemonicParsing="false" onAction="#viewChart" prefHeight="29.0" prefWidth="129.0" style="-fx-border-color: #fff; -fx-border-radius: 15;" styleClass="button4" stylesheets="@../css/style.css" text="Submit" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </Button>
+                                                        <Label GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="toggleData" onAction="#addYear" prefHeight="29.0" prefWidth="112.0" promptText="Add Year" style="-fx-background-color: #E9967A;" styleClass="button7" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </ComboBox>
+                                                        <ImageView fx:id="btnReset" fitHeight="43.0" fitWidth="45.0" onMouseClicked="#clearData" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <effect>
+                                                                <Bloom threshold="0.79" />
+                                                            </effect>
+                                                            <image>
+                                                                <Image url="@../resources/synology-cloud-station-drive-icon.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <ComboBox fx:id="metStationData" prefHeight="29.0" prefWidth="212.0" promptText="Meteorological Station" styleClass="button4" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </ComboBox>
+                                                        <ComboBox fx:id="yearList" prefHeight="29.0" prefWidth="147.0" promptText="Historical Data" styleClass="button4" stylesheets="@../css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </ComboBox>
+                                                    </children>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="15.0" prefWidth="26.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="190.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="38.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="166.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="156.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="177.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="0.0" prefWidth="16.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="60.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="67.0" minHeight="54.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="51.0" minHeight="24.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="33.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                                <GridPane prefWidth="830.0" style="-fx-background-color: #131022;">
+                                                    <children>
+                                                        <Label prefHeight="25.0" prefWidth="495.0" text="The mean minimum/ maximum temperature in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="6">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <LineChart fx:id="MinMaxDataChart" animated="false" prefHeight="324.0" prefWidth="792.0" style="-fx-background-color: #131022;" GridPane.columnSpan="9" GridPane.rowIndex="1">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" stylesheets="@../css/style.css" tickLabelFill="WHITE" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Temperature" side="LEFT" stylesheets="@../css/style.css" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </LineChart>
+                                                        <BarChart fx:id="barFrostDataChart" animated="false" prefHeight="229.0" prefWidth="660.0" GridPane.columnSpan="9" GridPane.rowIndex="3">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Days" side="LEFT" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </BarChart>
+                                                        <Label prefHeight="28.0" prefWidth="365.0" text="The total rainfall in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <BarChart fx:id="barRainfallDataChart" animated="false" prefHeight="285.0" prefWidth="803.0" GridPane.columnSpan="9" GridPane.rowIndex="5">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Days" side="LEFT" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </BarChart>
+                                                        <ToggleButton fx:id="tbMin" mnemonicParsing="false" onMouseClicked="#tbMinClicked" stylesheets="@../css/style.css" text="Min" textFill="WHITE" GridPane.columnIndex="6">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button1" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+                                                        <ToggleButton fx:id="tbMax" mnemonicParsing="false" onMouseClicked="#tbMaxClicked" stylesheets="@../css/style.css" text="Max" textFill="WHITE" GridPane.columnIndex="7">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button2" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+                                                        <ToggleButton fx:id="tbBoth" mnemonicParsing="false" onMouseClicked="#tbBothClicked" stylesheets="@../css/style.css" text="Both" textFill="WHITE" GridPane.columnIndex="8">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button3" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+                                                        <Label prefHeight="28.0" prefWidth="381.0" text="The number of days of air frost in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="7.0" prefWidth="39.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="109.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="0.0" prefWidth="101.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="0.0" prefWidth="169.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="0.0" prefWidth="24.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="0.0" prefWidth="196.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" prefWidth="47.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" prefWidth="49.0" />
+                                                        <ColumnConstraints maxWidth="87.0" minWidth="8.0" prefWidth="65.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="7.0" prefWidth="31.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="15.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="0.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../resources/Satellite-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+                <Tab style="-: #131022;" text="Comp">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="567.0" prefWidth="830.0" style="-fx-background-color: #131022; -fx-background-radius: 0 0 10 10;">
+                            <children>
+                                <ScrollPane layoutX="-1.0" layoutY="1.0" prefHeight="530.0" prefWidth="830.0" style="-fx-background-color: #131022; -fx-background-radius: 0 10 10 10;" stylesheets="@../css/style.css">
+                                    <content>
+                                        <VBox>
+                                            <children>
+                                                <GridPane fx:id="stationsComparisonGrid" prefHeight="182.0" prefWidth="830.0" style="-fx-background-color: #131022;">
+                                                    <children>
+                                                        <Label layoutX="24.0" layoutY="14.0" prefHeight="46.0" prefWidth="356.0" text="WEATHER COMPARISON" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font name="System Bold" size="26.0" />
+                                                            </font>
+                                                        </Label>
+
+                                                        <!-- QUESTION2: Button - To populate information into charts [COMPARISON TAB] -->
+                                                        <Button fx:id="btSubmit2" mnemonicParsing="false" onAction="#generateComparisonCharts" prefHeight="29.0" prefWidth="129.0" style="-fx-border-color: #fff; -fx-border-radius: 15;" styleClass="button4" stylesheets="@../css/style.css" text="Submit" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                        </Button>
+                                                        <Label GridPane.rowIndex="1" />
+
+                                                        <!-- QUESTION2: Image (button functions) - To clear information from charts [COMPARISON TAB] -->
+                                                        <ImageView fx:id="btnReset1" fitHeight="43.0" fitWidth="45.0" onMouseClicked="#clearData2" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <effect>
+                                                                <Bloom threshold="0.79" />
+                                                            </effect>
+                                                            <image>
+                                                                <!-- * Author: Papirus Development Team,
+                                                                 * Retrieval date: 9/4/20,
+                                                                                   * URL: http://www.iconarchive.com/show/papirus-apps-icons-by-papirus-team/synology-cloud-station-drive-icon.html -->
+                                                                <Image url="@../resources/synology-cloud-station-drive-icon.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <ComboBox fx:id="comparisonBaseStations" prefHeight="29.0" prefWidth="212.0" promptText="Meteorological Station" styleClass="button4" stylesheets="@../css/style.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor></ComboBox>
+                                                        <ComboBox fx:id="comparisonBaseYears" prefHeight="29.0" prefWidth="147.0" promptText="Historical Data" styleClass="button4" stylesheets="@../css/style.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor></ComboBox>
+                                                        <Button fx:id="addComparisonStationButton" mnemonicParsing="false" onAction="#addComparisonStation" prefHeight="21.0" prefWidth="112.0" style="-fx-background-color: #E9967A;" styleClass="button9" stylesheets="@../css/style.css" text="Add Station" textFill="#4d4646" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor></Button>
+                                                    </children>
+
+                                                    <!-- GridPane Constraints Title Section [COMPARISON TAB] -->
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="12.0" prefWidth="26.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="205.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="21.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="166.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="149.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="146.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="0.0" prefWidth="32.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="82.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="35.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="77.0" minHeight="50.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="72.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="51.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                                <GridPane prefWidth="830.0" style="-fx-background-color: #131022;">
+                                                    <children>
+                                                        <Label prefHeight="25.0" prefWidth="495.0" text="The mean minimum/ maximum temperature in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="6">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+
+                                                        <!-- QUESTION2: LineChart - To display minimum & maximum temperature for selected stations [COMPARISON TAB] -->
+                                                        <LineChart fx:id="minMaxComparisonChart" animated="false" prefHeight="298.0" prefWidth="799.0" style="-fx-background-color: #131022;" GridPane.columnSpan="9" GridPane.rowIndex="1">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" stylesheets="@../css/style.css" tickLabelFill="WHITE" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Temperature" side="LEFT" stylesheets="@../css/style.css" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </LineChart>
+
+                                                        <!-- QUESTION2: BarChart - To display The number of days of air frost in the month [COMPARISON TAB] -->
+                                                        <BarChart fx:id="airFrostComparisonChart" animated="false" prefHeight="229.0" prefWidth="660.0" GridPane.columnSpan="9" GridPane.rowIndex="3">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Days" side="LEFT" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </BarChart>
+                                                        <Label prefHeight="28.0" prefWidth="365.0" text="The total rainfall in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+
+                                                        <!-- QUESTION2: BarChart - The total rainfall in the month [COMPARISON TAB] -->
+                                                        <BarChart fx:id="rainFallComparisonChart" animated="false" prefHeight="285.0" prefWidth="803.0" GridPane.columnSpan="9" GridPane.rowIndex="5">
+                                                            <xAxis>
+                                                                <CategoryAxis label="Month" side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis label="Days" side="LEFT" tickLabelFill="WHITE" />
+                                                            </yAxis>
+                                                        </BarChart>
+
+                                                        <!-- QUESTION2: ToggleButton - Placed on LineChart (MinMaxChart1) to display minimum monthly temperature for selected stations/year(s) [COMPARISON TAB] -->
+                                                        <ToggleButton fx:id="tbMin2" mnemonicParsing="false" onMouseClicked="#tbMin2Clicked" stylesheets="@../css/style.css" text="Min" textFill="WHITE" GridPane.columnIndex="6">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button1" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+
+                                                        <!-- QUESTION2: ToggleButton - Placed on LineChart (MinMaxChart1) to display maximum monthly temperature for selected stations/year(s) [COMPARISON TAB] -->
+                                                        <ToggleButton fx:id="tbMax2" mnemonicParsing="false" onMouseClicked="#tbMax2Clicked" stylesheets="@../css/style.css" text="Max" textFill="WHITE" GridPane.columnIndex="7">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button2" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+
+                                                        <!-- QUESTION2: ToggleButton - Placed on LineChart (MinMaxChart1) to display minimum & maximum monthly temperature for selected stations/year(s) [COMPARISON TAB]-->
+                                                        <ToggleButton fx:id="tbBoth2" mnemonicParsing="false" onMouseClicked="#tbBoth2Clicked" stylesheets="@../css/style.css" text="Both" textFill="WHITE" GridPane.columnIndex="8">
+                                                            <cursor>
+                                                                <Cursor fx:constant="HAND" />
+                                                            </cursor>
+                                                            <styleClass>
+                                                                <String fx:value="toggle-button3" />
+                                                                <String fx:value="toggle-button4" />
+                                                            </styleClass>
+                                                        </ToggleButton>
+                                                        <Label prefHeight="28.0" prefWidth="381.0" text="The number of days of air frost in the month" textFill="WHITE" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font name="System Bold" size="15.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+
+                                                    <!-- GridPane Constraints [COMPARISON TAB] -->
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="10.0" prefWidth="26.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="118.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="0.0" prefWidth="101.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="0.0" prefWidth="169.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="0.0" prefWidth="24.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="0.0" prefWidth="196.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" prefWidth="47.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" prefWidth="49.0" />
+                                                        <ColumnConstraints maxWidth="87.0" minWidth="8.0" prefWidth="65.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="7.0" prefWidth="31.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints maxHeight="36.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="15.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="309.0" minHeight="0.0" prefHeight="309.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <!-- * Author: Icojam,
+                                 * Retrieval date: 12/4/20,
+                                 * URL: http://www.iconarchive.com/show/onebit-icons-by-icojam/broadcast-station-icon.html -->
+                                <Image url="@../resources/station-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+            </tabs>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </TabPane>
+    </children>
+</AnchorPane>

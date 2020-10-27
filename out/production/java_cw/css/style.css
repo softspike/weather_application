@@ -1,0 +1,232 @@
+/*////////////////////// tab-pane detailing start //////////////////////*/
+
+#tabpane {
+        -fx-tab-min-height: 5em;
+        -fx-tab-max-height: 5em;
+        -fx-tab-min-width: 5.5em;
+        -fx-tab-max-width: 5.5em;
+        }
+
+        .tab .tab-label {
+        -fx-background-color: transparent;
+        -fx-alignment: center;
+        }
+
+        .tab {
+        -fx-background-color: #6C577C;
+        -fx-background-insets: 0;
+        -fx-background-radius: 0;
+        -fx-padding: 0 30 0 30;
+        }
+
+        .tab:selected {
+        -fx-background-color: #6C577C;
+        -fx-background-radius: 0;
+        -fx-background-insets: 0;
+        -fx-border-width: 5 0 0 0;
+        -fx-border-color: #3FE387;
+        }
+
+        .tab:pressed {
+        -fx-background-color: #2F2B43;
+        }
+
+        .tab:focused {
+        -fx-focus-color: transparent;
+        }
+
+        .tab-pane *.tab-header-background {
+        -fx-background-color: transparent;
+        }
+
+        .tab-pane: left *.tab-header-area {
+        -fx-background-insets: 0 0 0 10;
+        -fx-padding: 0em 0em 0em 0em;
+        }
+
+        .tab:selected .focus-indicator {
+        -fx-focus-color: transparent;
+        -fx-border-color: transparent;
+        }
+
+        .linear-grad {
+        -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+        }
+        /*/////////////////////// tab-pane detailing end //////////////////////*/
+
+        /*////////////////////// combo-box detailing start ///////////////////*/
+
+        .combo-box .arrow {
+        -fx-background-color: #fff;
+
+        }
+
+        .combo-box {
+        -fx-border-radius: 30;
+
+        }
+
+        .combo-box-popup: .list-cell {
+        -fx-background-color: #34495e;
+        -fx-text-fill: #fff;
+        }
+
+        /*////////////////////// combo-box detailing end /////////////////////*/
+
+        /*////////////////////// button detailing start //////////////////////*/
+        .button1 {
+        -fx-background-color : #393351;
+        -fx-background-radius :  30 0 0 30;
+        }
+
+        .button1:hover {
+        -fx-background-color : #524A7B ;
+        -fx-background-radius :  30 0 0 30;
+        }
+
+        .button1:pressed {
+        -fx-background-color : #2F2B43 ;
+        -fx-background-radius :  30 0 0 30;
+        }
+
+        .button2 {
+        -fx-background-color : #393351;
+        -fx-background-radius :  20;
+        }
+
+        .button2:hover {
+        -fx-background-color : #524A7B ;
+        -fx-background-radius :  20;
+        }
+
+        .button2:pressed {
+        -fx-background-color : #2F2B43 ;
+        -fx-background-radius :  20;
+        }
+
+        .button3 {
+        -fx-background-color : #141124;
+        -fx-background-radius :  0 0 0 0;
+        }
+
+        .button3:hover {
+        -fx-background-color : #524A7B ;
+        }
+
+        .button3:pressed {
+        -fx-background-color : #2F2B43 ;
+        }
+
+        .button4 {
+        -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
+        -fx-border-color: #fff;
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button4:hover {
+        -fx-background-color :linear-gradient(to top left, #D4CEE3, #41951C);
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button4:pressed {
+        -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button5 {
+        -fx-text-fill: white;
+        -fx-background-color: #AE0C0C;
+        }
+
+        .button5:hover {
+        -fx-text-fill: white;
+        -fx-background-color :#AE0C0C;
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button7 {
+        -fx-background-color:#336699;
+        -fx-text-fill: white;
+        }
+
+        .button7:hover {
+        -fx-background-color :#336699;
+        -fx-text-fill: white;
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button7: selected {
+        -fx-background-color: #6C577C;
+
+        }
+
+        .button9:hover {
+        -fx-background-color :#E9967A;
+        -fx-text-fill: #362929;
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        .button9: selected {
+        -fx-background-color: #6C577C;
+
+        }
+        /*/////////////////////// button detailing end ////////////////////////*/
+
+        /*////////////////////// toggle button detailing start ///////////////*/
+
+        .toggle-button1 {
+        -fx-base: #add8e6;
+        }
+
+        .toggle-button2 {
+        -fx-base: #ff91a4;
+        }
+
+        .toggle-button3 {
+        -fx-base: #90ee90;
+        }
+
+        .toggle-button4:hover {
+        -fx-background-radius :  30 30 30 30;
+        }
+
+        /*////////////////////// toggle button detailing end /////////////////*/
+
+        /*////////////////////// chart properties detailing start ////////////*/
+
+        .chart-plot-background {
+        -fx-background-color: transparent;
+        }
+
+        .chart-legend {
+        -fx-background-color: transparent;
+        -fx-padding: 20px;
+        }
+
+        .chart-legend-item-symbol {
+        -fx-background-radius: 0;
+        }
+
+        .chart-legend-item {
+        -fx-text-fill: #191970;
+        }
+
+        .axis-label {
+        -fx-text-fill: #4682b4;
+        }
+
+        .chart-legend {
+        -fx-background-color: ladder(-fx-background, derive(-fx-control-inner-background, 5%) 50%, derive(-fx-control-inner-background, -5%) 51%);
+        -fx-background-insets: 0,1;
+        -fx-background-radius: 6,5;
+        -fx-padding: 4px;
+        }
+
+
+        .context-menu > .scroll-arrow:hover {
+        -fx-background: -fx-accent;
+        -fx-background-color: -fx-selection-bar;
+        -fx-text-fill: -fx-selection-bar-text;
+        }
+
+/*////////////////////// chart properties detailing end //////////////*/
